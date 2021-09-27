@@ -1,4 +1,4 @@
-package com.robot_pollueur;
+package monde;
 
 public class Monde {
     private final int nbL, nbC;
@@ -71,5 +71,13 @@ public class Monde {
                     nb++;
 
         return nb;
+    }
+
+    public int getNbC() {
+        return nbC;
+    }
+
+    public int getNbL() {
+        return nbL;
     }
 }
