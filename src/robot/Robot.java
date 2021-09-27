@@ -27,4 +27,6 @@ public abstract class Robot {
         }
         return 0;
     }
+
+    public abstract void parcourir();
 }
