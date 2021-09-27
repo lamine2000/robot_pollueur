@@ -28,5 +28,5 @@ public abstract class Robot {
         return 0;
     }
 
-    public abstract void parcourir();
+    public abstract void parcourir(); //methode abstraite
 }
