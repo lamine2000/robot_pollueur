@@ -10,9 +10,9 @@ public class Main {
         Robot r = new PollueurSauteur(3, 5, monde);
         Robot r2 = new PollueurSauteur(-3, 6, monde);
         Robot r1 = new PollueurToutDroit(6, monde);
-        //r1.parcourir();
-        //r2.parcourir();
-        //r.parcourir();
+        r1.parcourir();
+        r2.parcourir();
+        r.parcourir();
         System.out.println(monde);
     }
 }
