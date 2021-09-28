@@ -31,7 +31,5 @@ public class PollueurSauteur extends RobotPollueur {
         */
         this.posy -= 1;
         this.posx -= deltax;
-
-        System.out.println(this.posx + "  " +this.posy );
     }
 }

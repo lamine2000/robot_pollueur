@@ -13,6 +13,7 @@ public abstract class RobotPollueur extends Robot {
     }
 
     public void polluer(){
-        m.metPapierGras(this.posy, this.posx);
+        if(m.estSale(posy, posx) == 0)
+            m.metPapierGras(this.posy, this.posx);
     }
 }
