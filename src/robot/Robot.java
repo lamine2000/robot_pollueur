@@ -30,3 +30,5 @@ public abstract class Robot {
 
     public abstract void parcourir(); //methode abstraite
 }
+
+// TODO: 28-09-2021 documenter toutes les methodes et mieux commenter le code
