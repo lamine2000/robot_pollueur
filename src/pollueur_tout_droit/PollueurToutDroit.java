@@ -7,13 +7,16 @@ public class PollueurToutDroit extends RobotPollueur {
     private final int colDepart;
 
     public PollueurToutDroit(int colDepart, Monde m) {
-        super(0, colDepart, m);
+        super(colDepart, 0, m);
         this.colDepart = colDepart;
     }
 
     @Override
     public void parcourir() {
-        for(int i = 0; i < m.getNbL(); i++)
-            m.metPapierGras(i, colDepart);
+        for(int i = 0; i < m.getNbL(); i++) {
+            polluer();
+            this.posy += 1;
+        }
+        this.posy -= 1;//repositionner le robot à la derniere ligne
     }
 }
