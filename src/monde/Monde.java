@@ -40,7 +40,7 @@ public class Monde {
 
     //retourne -1 si la case n'existe pas
     public int metPapierGras(int i, int j){
-        if(i < 0 || j < 0 || i > nbL || j > nbC)
+        if(i < 0 || j < 0 || i >= nbL || j >= nbC)
             return -1;
         else
             mat[i][j] = true;
@@ -48,7 +48,7 @@ public class Monde {
     }
 
     public int prendPapierGras(int i, int j){
-        if(i < 0 || j < 0 || i > nbL || j > nbC)
+        if(i < 0 || j < 0 || i >= nbL || j >= nbC)
             return -1;
         else
             mat[i][j] = false;
@@ -56,7 +56,7 @@ public class Monde {
     }
 
     public int estSale(int i , int j){
-        if(i < 0 || j < 0 || i > nbL || j > nbC)
+        if(i < 0 || j < 0 || i >= nbL || j >= nbC)
             return -1;
         else
             return mat[i][j] ? 1 : 0;
