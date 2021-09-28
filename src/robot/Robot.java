@@ -18,8 +18,8 @@ public abstract class Robot {
         this.m = m;
     }
 
-    public int vaEn(int i, int j){
-        if(i < 0 || j < 0 || i > m.getNbL() || j > m.getNbC())
+    protected int vaEn(int i, int j){
+        if(i < 0 || j < 0 || i >= m.getNbL() || j >= m.getNbC())
             return -1;
         else{
             posx = j;
