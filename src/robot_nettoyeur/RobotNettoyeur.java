@@ -5,7 +5,6 @@ import robot.Robot;
 
 public class RobotNettoyeur extends Robot {
 
-
     public RobotNettoyeur(Monde m) {
         super(0, 0, m);
     }
