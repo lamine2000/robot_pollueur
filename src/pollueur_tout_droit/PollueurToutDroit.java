@@ -15,8 +15,7 @@ public class PollueurToutDroit extends RobotPollueur {
     public void parcourir() {
         for(int i = 0; i < m.getNbL(); i++) {
             polluer();
-            this.posy += 1;
+            vaEn(i+1, this.colDepart);
         }
-        this.posy -= 1;//repositionner le robot à la derniere ligne
     }
 }
