@@ -29,7 +29,7 @@ public class RobotNettoyeur extends Robot {
                     vaEn(i+1, m.getNbC()-1);
                     deltax = -1;
                 }
-                else if(dansMonde == -1 /*&& deltax > 0*/){
+                else if(dansMonde == -1 /*&& deltax < 0*/){
                     vaEn(i+1, 0);
                     deltax = 1;
                 }
