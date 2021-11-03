@@ -9,22 +9,48 @@ import nettoyeur_distrait.NettoyeurDistrait;
 
 public class TestRobots {
 
+    public static void afficheMonde(Monde monde, String titre){
+        System.out.println(titre);
+        System.out.println(monde.toString());
+        System.out.println("Nombre de papiers gras : "+ monde.nbPapiersGras());
+        System.out.println("\n\n__________________________________________\n");
+    }
+
     public static void main(String[] args) {
-        Monde monde = new Monde(20, 20, true);
-        Robot r = new PollueurSauteur(3, 5, monde);
-        Robot r2 = new PollueurSauteur(-3, 6, monde);
-        Robot r1 = new PollueurToutDroit(6, monde);
-        Robot r3 = new RobotNettoyeur(monde);
-        Robot r4 = new NettoyeurDistrait(monde);
-        //r3.parcourir();
-        //r1.parcourir();
-        //r2.parcourir();
-        //r.parcourir();
 
-        System.out.println(monde);
+        //création d'un monde propre
+        Monde monde = new Monde(40, 45, false);
 
-        r4.parcourir();
+        //On affiche le monde avant le passage des Robots
+        afficheMonde(monde, "Le monde avant le passage des robots :");
 
-        System.out.println(monde);
+        //création des différents robots
+        Robot ps1 = new PollueurSauteur(3, 5, monde);
+        Robot ps2 = new PollueurSauteur(-2, 30, monde);
+
+        Robot pt = new PollueurToutDroit(17, monde);
+
+        Robot n = new RobotNettoyeur(monde);
+        Robot nd = new NettoyeurDistrait(monde);
+
+        //les robots pollueurs parcourent le monde et polluent
+        ps1.parcourir();
+        ps2.parcourir();
+        pt.parcourir();
+
+        //On réaffiche le monde
+        afficheMonde(monde, "Le monde après le passage des robots pollueurs :");
+
+        //le robot nettoyeur distrait parcoure le monde et nettoie
+        nd.parcourir();
+
+        //On réaffiche le monde
+        afficheMonde(monde, "Le monde après le passage du nettoyeur distrait :");
+
+        //le robot nettoyeur (pas distrait) parcoure le monde et nettoie
+        n.parcourir();
+
+        //On réaffiche le monde
+        afficheMonde(monde, "Le monde après le passage du nettoyeur (pas distrait) :");
     }
 }
