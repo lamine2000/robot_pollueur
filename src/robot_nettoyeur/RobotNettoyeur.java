@@ -10,27 +10,27 @@ public class RobotNettoyeur extends Robot {
     }
 
     protected void nettoyer(){
-        if(m.estSale(this.posy, this.posx) == 1)
-            m.prendPapierGras(this.posy, this.posx);
+        if(m.estSale(this.posx, this.posy) == 1)
+            m.prendPapierGras(this.posx, this.posy);
     }
 
     @Override
     public void parcourir() {
         int newx, dansMonde, deltax = 1;
 
-        for (int i = 0; i < m.getNbL(); i++) {
-            for(int j = 0; j < m.getNbC(); j++){
+        for (int j = 0; j < m.getNbL(); j++) {
+            for(int i = 0; i < m.getNbC(); i++){
                 this.nettoyer();
 
                 newx = this.posx + deltax;
-                dansMonde = vaEn(i, newx);
+                dansMonde = vaEn(newx, j);
 
-                if(dansMonde == -1 && deltax > 0){
-                    vaEn(i+1, m.getNbC()-1);
+                if (dansMonde == -1 && deltax > 0) {
+                    vaEn(m.getNbC() - 1, j+1);
                     deltax = -1;
-                }
-                else if(dansMonde == -1 /*&& deltax < 0*/){
-                    vaEn(i+1, 0);
+                } 
+                else if (dansMonde == -1 /*&& deltax > 0*/) {
+                    vaEn(0, j+1);
                     deltax = 1;
                 }
             }

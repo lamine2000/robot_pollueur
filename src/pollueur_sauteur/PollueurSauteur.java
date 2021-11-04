@@ -15,18 +15,19 @@ public class PollueurSauteur extends RobotPollueur {
     @Override
     public void parcourir() {
         int newx, dansMonde;
-        for(int i = 0; i < m.getNbL(); i++){
+        for(int j = 0; j < m.getNbL(); j++){
             this.polluer();
 
             newx = this.posx + deltax;
-            dansMonde = vaEn(i+1, newx);
+            dansMonde = vaEn(newx, j+1);
 
             if(deltax > 0 && dansMonde == -1)
-                vaEn(i+1, newx % m.getNbC());
+                vaEn(newx % m.getNbC(), j+1);
 
             else if(deltax < 0 && dansMonde == -1 )
                 //le robot apparait de l'autre coté de la ligne
-                vaEn(i+1, m.getNbC() - ((m.getNbC()-newx) % m.getNbC()));
+                vaEn(m.getNbC() - ((m.getNbC()-newx) % m.getNbC()), j+1);
+                //vaEn(i+1, m.getNbC() + newx);
         }
     }
 }

@@ -13,9 +13,9 @@ public class PollueurToutDroit extends RobotPollueur {
 
     @Override
     public void parcourir() {
-        for(int i = 0; i < m.getNbL(); i++) {
+        for(int j = 0; j < m.getNbL(); j++) {
             polluer();
-            vaEn(i+1, this.colDepart);
+            vaEn(this.colDepart, j+1);
         }
     }
 }
