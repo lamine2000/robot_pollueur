@@ -13,10 +13,11 @@ public abstract class Robot {
     }
 
     public Robot(Monde m){
-        this.posx = (int) (Math.random() * (m.getNbC()));
-        this.posy = (int) (Math.random() * (m.getNbL()));
-        this.m = m;
-        //this.Robot(posx, posy, m); 
+        this(
+                (int) (Math.random() * (m.getNbC())),
+                (int) (Math.random() * (m.getNbL())),
+                m
+        );
     }
 
     protected int vaEn(int i, int j){
