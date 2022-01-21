@@ -34,12 +34,18 @@ public class TestRobots {
         Robot nd = new NettoyeurDistrait(monde);
 
         //les robots pollueurs parcourent le monde et polluent
-        ps1.parcourir();
-        ps2.parcourir();
-        pt.parcourir();
 
+        pt.parcourir();
         //On réaffiche le monde
-        afficheMonde(monde, "Le monde après le passage des robots pollueurs :");
+        afficheMonde(monde, "Le monde après le passage du pollueur tout droit :");
+
+        ps1.parcourir();
+        //On réaffiche le monde
+        afficheMonde(monde, "Le monde après le passage d'un robot pollueur sauteur :");
+
+        ps2.parcourir();
+        //On réaffiche le monde
+        afficheMonde(monde, "Le monde après le passage d'un deuxième pollueur sauteur :");
 
         //le robot nettoyeur distrait parcoure le monde et nettoie
         nd.parcourir();
