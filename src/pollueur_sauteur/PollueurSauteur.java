@@ -27,7 +27,6 @@ public class PollueurSauteur extends RobotPollueur {
             else if(deltax < 0 && dansMonde == -1 )
                 //le robot apparait de l'autre coté de la ligne
                 vaEn(m.getNbC() - ((m.getNbC()-newx) % m.getNbC()), j+1);
-                //vaEn(i+1, m.getNbC() + newx);
         }
     }
 }
